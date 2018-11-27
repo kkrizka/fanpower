@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:fanpower-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -147,13 +148,13 @@ Wire Wire Line
 Wire Wire Line
 	5650 4250 5750 4250
 NoConn ~ 5650 4550
-Text Label 5750 4150 0    50   ~ 0
+Text Label 5750 3950 0    50   ~ 0
 SIGTACH1
-Text Label 5750 4250 0    50   ~ 0
+Text Label 5750 4150 0    50   ~ 0
 SIGTACH2
-Text Label 5750 4350 0    50   ~ 0
+Text Label 5750 4050 0    50   ~ 0
 SIGON1
-Text Label 5750 4450 0    50   ~ 0
+Text Label 5750 4350 0    50   ~ 0
 SIGON2
 Wire Wire Line
 	5650 3750 5750 3750
@@ -161,17 +162,15 @@ Wire Wire Line
 	5750 3850 5650 3850
 Wire Wire Line
 	5650 4350 5750 4350
-Wire Wire Line
-	5650 4450 5750 4450
 Text Label 5750 3750 0    50   ~ 0
 SIGPWM1
 Text Label 5750 3850 0    50   ~ 0
 SIGPWM2
 $Comp
-L Connector_Generic:Conn_01x04 J4
+L Connector_Generic:Conn_01x04 FAN1
 U 1 1 5BFBF323
 P 4700 1850
-F 0 "J4" H 4780 1842 50  0000 L CNN
+F 0 "FAN1" H 4780 1842 50  0000 L CNN
 F 1 "Conn_01x04" H 4780 1751 50  0000 L CNN
 F 2 "Connector:FanPinHeader_1x04_P2.54mm_Vertical" H 4700 1850 50  0001 C CNN
 F 3 "~" H 4700 1850 50  0001 C CNN
@@ -194,10 +193,10 @@ F 3 "~" H 2450 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L Connector_Generic:Conn_01x02 NTC1
 U 1 1 5BFC1E46
 P 2650 5250
-F 0 "J3" H 2730 5242 50  0000 L CNN
+F 0 "NTC1" H 2730 5242 50  0000 L CNN
 F 1 "Conn_01x02" H 2730 5151 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2650 5250 50  0001 C CNN
 F 3 "~" H 2650 5250 50  0001 C CNN
@@ -245,117 +244,6 @@ Wire Wire Line
 	3250 2150 3200 2150
 Text Label 2800 2150 2    50   ~ 0
 SIGON1
-Text Label 5750 3950 0    50   ~ 0
-I2C_SCL
-Text Label 5750 4050 0    50   ~ 0
-I2C_SDA
-$Comp
-L Device:R R2
-U 1 1 5BFCA014
-P 2600 3800
-F 0 "R2" H 2670 3846 50  0000 L CNN
-F 1 "2k" H 2670 3755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2530 3800 50  0001 C CNN
-F 3 "~" H 2600 3800 50  0001 C CNN
-	1    2600 3800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR010
-U 1 1 5BFCA0A0
-P 2600 3550
-F 0 "#PWR010" H 2600 3400 50  0001 C CNN
-F 1 "+3V3" H 2615 3723 50  0000 C CNN
-F 2 "" H 2600 3550 50  0001 C CNN
-F 3 "" H 2600 3550 50  0001 C CNN
-	1    2600 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2600 3550 2600 3650
-$Comp
-L power:+3V3 #PWR011
-U 1 1 5BFCA854
-P 2900 3550
-F 0 "#PWR011" H 2900 3400 50  0001 C CNN
-F 1 "+3V3" H 2915 3723 50  0000 C CNN
-F 2 "" H 2900 3550 50  0001 C CNN
-F 3 "" H 2900 3550 50  0001 C CNN
-	1    2900 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R3
-U 1 1 5BFCA8AC
-P 2900 3800
-F 0 "R3" H 2970 3846 50  0000 L CNN
-F 1 "2k" H 2970 3755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2830 3800 50  0001 C CNN
-F 3 "~" H 2900 3800 50  0001 C CNN
-	1    2900 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 3650 2900 3550
-Wire Wire Line
-	2600 3950 2600 4050
-Wire Wire Line
-	2600 4050 2550 4050
-Wire Wire Line
-	2900 3950 2900 4150
-Wire Wire Line
-	2900 4150 2550 4150
-Text Label 2550 4050 2    50   ~ 0
-I2C_SCL
-Text Label 2550 4150 2    50   ~ 0
-I2C_SDA
-$Comp
-L Connector_Generic:Conn_01x06 J1
-U 1 1 5BFCEBF2
-P 1600 3800
-F 0 "J1" H 1680 3792 50  0000 L CNN
-F 1 "Conn_01x06" H 1680 3701 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 1600 3800 50  0001 C CNN
-F 3 "~" H 1600 3800 50  0001 C CNN
-	1    1600 3800
-	1    0    0    -1  
-$EndComp
-NoConn ~ 1400 3600
-NoConn ~ 1400 3700
-Wire Wire Line
-	1400 3800 1300 3800
-Wire Wire Line
-	1400 3900 1300 3900
-Text Label 1300 3800 2    50   ~ 0
-I2C_SCL
-Text Label 1300 3900 2    50   ~ 0
-I2C_SDA
-$Comp
-L power:+3V3 #PWR01
-U 1 1 5BFD06D1
-P 850 4000
-F 0 "#PWR01" H 850 3850 50  0001 C CNN
-F 1 "+3V3" H 865 4173 50  0000 C CNN
-F 2 "" H 850 4000 50  0001 C CNN
-F 3 "" H 850 4000 50  0001 C CNN
-	1    850  4000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR02
-U 1 1 5BFD0759
-P 850 4100
-F 0 "#PWR02" H 850 3850 50  0001 C CNN
-F 1 "GND" H 855 3927 50  0000 C CNN
-F 2 "" H 850 4100 50  0001 C CNN
-F 3 "" H 850 4100 50  0001 C CNN
-	1    850  4100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	850  4100 1400 4100
-Wire Wire Line
-	1400 4000 850  4000
 $Comp
 L Switch:SW_SPDT SW1
 U 1 1 5BFC7043
@@ -620,10 +508,10 @@ Wire Wire Line
 Text Label 7550 1400 2    50   ~ 0
 SIGTACH2
 $Comp
-L Connector_Generic:Conn_01x04 J5
+L Connector_Generic:Conn_01x04 FAN2
 U 1 1 5BFE671E
 P 7650 1850
-F 0 "J5" H 7730 1842 50  0000 L CNN
+F 0 "FAN2" H 7730 1842 50  0000 L CNN
 F 1 "Conn_01x04" H 7730 1751 50  0000 L CNN
 F 2 "Connector:FanPinHeader_1x04_P2.54mm_Vertical" H 7650 1850 50  0001 C CNN
 F 3 "~" H 7650 1850 50  0001 C CNN
@@ -716,7 +604,7 @@ U 1 1 5BFE9443
 P 3450 2150
 F 0 "Q1" H 3655 2196 50  0000 L CNN
 F 1 "BSH105,215" H 3655 2105 50  0000 L CNN
-F 2 "" H 3650 2250 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3650 2250 50  0001 C CNN
 F 3 "~" H 3450 2150 50  0001 C CNN
 	1    3450 2150
 	1    0    0    -1  
@@ -727,9 +615,67 @@ U 1 1 5BFE96EB
 P 6400 2150
 F 0 "Q2" H 6605 2196 50  0000 L CNN
 F 1 "BSH105,215" H 6605 2105 50  0000 L CNN
-F 2 "" H 6600 2250 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6600 2250 50  0001 C CNN
 F 3 "~" H 6400 2150 50  0001 C CNN
 	1    6400 2150
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:R R2
+U 1 1 5BFDB9AB
+P 1350 5000
+F 0 "R2" H 1420 5046 50  0000 L CNN
+F 1 "10k" H 1420 4955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1280 5000 50  0001 C CNN
+F 3 "~" H 1350 5000 50  0001 C CNN
+	1    1350 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 FLOW1
+U 1 1 5BFDB9B1
+P 1550 5250
+F 0 "FLOW1" H 1630 5242 50  0000 L CNN
+F 1 "Conn_01x02" H 1630 5151 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1550 5250 50  0001 C CNN
+F 3 "~" H 1550 5250 50  0001 C CNN
+	1    1550 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 5250 1350 5150
+$Comp
+L power:+3V3 #PWR0101
+U 1 1 5BFDB9B8
+P 1350 4750
+F 0 "#PWR0101" H 1350 4600 50  0001 C CNN
+F 1 "+3V3" H 1365 4923 50  0000 C CNN
+F 2 "" H 1350 4750 50  0001 C CNN
+F 3 "" H 1350 4750 50  0001 C CNN
+	1    1350 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 4850 1350 4750
+$Comp
+L power:GND #PWR0102
+U 1 1 5BFDB9BF
+P 1350 5450
+F 0 "#PWR0102" H 1350 5200 50  0001 C CNN
+F 1 "GND" H 1355 5277 50  0000 C CNN
+F 2 "" H 1350 5450 50  0001 C CNN
+F 3 "" H 1350 5450 50  0001 C CNN
+	1    1350 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 5450 1350 5350
+Wire Wire Line
+	1350 5250 1250 5250
+Connection ~ 1350 5250
+Text Label 1250 5250 2    50   ~ 0
+FLOW
+Text Label 5750 4250 0    50   ~ 0
+FLOW
+NoConn ~ 5650 4450
 $EndSCHEMATC
